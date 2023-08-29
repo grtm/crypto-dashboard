@@ -1,0 +1,144 @@
+.form-container{
+    background-color: rgba(5, 7, 6, 0.959);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .form-wrapper{
+       background-color: rgb(46, 45, 45);
+       padding: 50px 80px;
+       border-radius: 10px;
+       gap: 20px;
+       display: flex;
+       flex-direction: column;
+     
+     .Large{
+        font-weight: bold;
+        font-size: 25px;
+        color: rgba(3, 224, 77, 0.918);
+     }  
+     .small{
+        font-size: 15px;
+        color: green;
+     } 
+     form{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        input{
+            padding: 15px;
+            border: none;
+            outline: none;
+            border-bottom: 2px solid green;
+            background-color: transparent;
+            color: rgb(204, 202, 202);
+        &::placeholder{
+            color: rgb(197, 193, 193);
+        } 
+        }
+        button{
+            background-color: rgba(3, 224, 77, 0.918);
+            border-radius: 20px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 20px;
+        }
+    }
+    p{
+        color: white;
+        .link{
+            text-decoration: none;
+            color: rgb(3, 199, 189);
+
+
+         &:hover{
+            color: rgb(0, 255, 157);
+         }   
+        }
+    }
+}
+}
+
+.dashboard{
+    display: flex;
+    background-color: rgba(5, 7, 6, 0.959);
+    justify-content: space-between;
+    height: 100vh;
+    color: white;
+    padding: 20px;
+
+        .dashboard-container{
+        display: flex;
+        flex-direction: column;
+        .title{
+            font-size: 30px;
+        }
+        .text{
+            font-style: italic;
+            color: rgb(141, 139, 139);
+            font-size: 12px;
+        }
+        }
+        .search{
+            background-color: rgba(39, 41, 44, 0.589);
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            width: 300px;
+            height: 50px;
+            padding: 0 3px;
+            .search-icon{
+                background-color: rgba(48, 48, 56, 0.959);
+                border-radius: 50%;
+                width: 40px;
+            }
+            input{
+               border: none;
+               outline: none;
+               background-color: transparent;
+               color: gray;
+            &::placeholder{
+                color: gray;
+            }   
+            }
+        }
+        .user-profile{
+            .user{
+                display: flex;
+                align-items: center;
+                gap: 30px;
+            .bell-icon{
+                background-color: rgba(39, 41, 44, 0.589);
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                object-fit: cover;
+            }
+            .avatar{
+                object-fit: cover;
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+            }
+            .user-name{
+                display: flex;
+                gap: 20px;
+                span{
+                    margin-top: 15px;
+                }
+                button{
+                    background-color: rgba(3, 224, 77, 0.918);
+                    border-radius: 20px;
+                    border: none;
+                    outline: none;
+                    color: white;
+                    padding: 20px;
+                }
+            }
+        }
+        }
+}
+
