@@ -1,38 +1,154 @@
+@import url("https://fonts.cdnfonts.com/css/lufga");
+
+* {
+  margin: 0;
+  padding: 0;
+}
 .App {
   text-align: center;
+  background-color: black;
+}
+.logo {
+  background-color: #1a1d1e;
+  width: 260px;
+  justify-content: center;
+  height: 20px;
+  font-family: Tahoma;
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+  color: #48ff85ea;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.logo img {
+  width: 24px;
+  height: 24px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.sidenav {
+  width: auto;
+  height: 100vh;
+  align-items: center;
+  background-color: #1a1d1e;
+  display: flex;
+  /* position: fixed; */
+  font-family: "Lufga", sans-serif;
+  flex-direction: column;
+  padding: 30px;
+  box-sizing: border-box;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.flex{
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+}
+.nav-links {
+  display: block;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.dashboard {
+  color: white;
+  height: 100vh;
+  background-color: black;
+}
+.portfolio {
+  background-color: black;
+  height: 100vh;
   color: white;
 }
+.body {
+  background-color: aliceblue;
+  display: flex;
 
-.App-link {
-  color: #61dafb;
+}
+.body .side{
+  width: 20%;
+}
+.body .main{
+  width: 80%;
+}
+a {
+  text-align: left;
+}
+.sidenav a.active {
+  border-radius: 25px;
+  font-family: "Lufga", sans-serif;
+  border-radius: 25px;
+  background: #fff;
+  color: #000;
+  font-family: Lufga;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border: 3px solid rgb(176, 209, 143);
+  display: flex;
+  width: 100%;
+  height: auto;
+  padding: 5px 44px 6px 4px;
+  align-items: center;
+  gap: 8px;
+}
+.links {
+  width: 80%;
+  font-family: "Lufga", sans-serif;
+  margin-top: 68px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 26px;
+}
+.nav-links {
+  color: #e1e1e1;
+  font-family: Lufga;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
+  width: 90%;
+  height: auto;
+  display: flex;
+  background-color: #1a1d1e;
+  justify-content: left;
+  align-items: center;
+  gap: 16px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav-links svg {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: #1a1d1e;
+}
+.sidenav-foot{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #e1e1e1;
+  align-items: left;
+  justify-content: left;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+}
+.logout{
+  width: 91px ;
+  display: flex;
+  background-color: #1a1d1e;
+  justify-content: space-between;
+  align-items: center;
+}
+.mode{
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  float: left;
 }
