@@ -12,16 +12,22 @@
        gap: 20px;
        display: flex;
        flex-direction: column;
-     
+
+     .Logo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
      .Large{
         font-weight: bold;
         font-size: 25px;
-        color: rgba(3, 224, 77, 0.918);
-     }  
-     .small{
+        color: #77ED91;
+       }  
+      }
+      .small{
         font-size: 15px;
-        color: green;
-     } 
+        color: rgb(3, 216, 3);
+       } 
      form{
         display: flex;
         flex-direction: column;
@@ -51,7 +57,8 @@
         color: white;
         .link{
             text-decoration: none;
-            color: rgb(3, 199, 189);
+            color: 
+            #77ED91;
 
 
          &:hover{
@@ -68,11 +75,15 @@
     justify-content: space-between;
     height: 100vh;
     color: white;
-    padding: 20px;
 
         .dashboard-container{
         display: flex;
-        flex-direction: column;
+        gap: 250px;
+        padding: 10px 0;
+        .title-container{
+            display: flex;
+            flex-direction: column;
+        }
         .title{
             font-size: 30px;
         }
@@ -81,19 +92,17 @@
             color: rgb(141, 139, 139);
             font-size: 12px;
         }
-        }
         .search{
-            background-color: rgba(39, 41, 44, 0.589);
+            background-color: rgba(45, 47, 49, 0.589);
             border-radius: 50px;
             display: flex;
             align-items: center;
             width: 300px;
             height: 50px;
             padding: 0 3px;
-            .search-icon{
-                background-color: rgba(48, 48, 56, 0.959);
+            svg{
+                background-color: rgba(92, 92, 94, 0.959);
                 border-radius: 50%;
-                width: 40px;
             }
             input{
                border: none;
@@ -105,11 +114,13 @@
             }   
             }
         }
+    }
         .user-profile{
+            padding: 10px 0;
             .user{
                 display: flex;
                 align-items: center;
-                gap: 30px;
+                gap: 10px;
             .bell-icon{
                 background-color: rgba(39, 41, 44, 0.589);
                 border-radius: 50%;
@@ -140,5 +151,10 @@
             }
         }
         }
+}
+
+.sidebar{
+    border: 1px solid white;
+    width: 260px;
 }
 
