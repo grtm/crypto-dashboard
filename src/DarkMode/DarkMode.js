@@ -8,7 +8,6 @@ const DarkMode = () => {
 
     const {theme, toggleTheme} = useContext(ThemeContext)
     
-    localStorage.getItem( 'theme' , 'toggleTheme');
   return (
     <div className="dark_mode">
       <input

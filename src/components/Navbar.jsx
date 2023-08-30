@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div className="menu">
-        {hamburger ? (<div className="close" onClick={handleShowHamburger}>close</div>) : (
+        {hamburger ? (<div className="close" onClick={handleShowHamburger}><i class="fi fi-br-cross"></i></div>) : (
             <svg
             width="44"
             height="44"

@@ -255,7 +255,7 @@ const Dashboard = () => {
                 <p>Symbols</p>
                 <sub>SYB</sub>
               </div>
-              <small>$0.00000001239</small>
+              <small>$0.000001239</small>
             </div>
           </div>
         </div>

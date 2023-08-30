@@ -17,7 +17,6 @@ import { ThemeContext, useTheme } from "./hooks/useTheme";
 function App() {
  
   const {theme, toggleTheme} = useTheme()
-  localStorage.getItem( 'theme' , 'toggleTheme');
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
@@ -25,9 +24,6 @@ function App() {
         <div className="body">
           <div className="side">
             <Sidenav />
-            <label>
-
-            </label>
           </div>
           <div className="main">
             <Navbar />
