@@ -2,7 +2,7 @@ import React from 'react';
 
 const Watchlist = () => {
     return(
-         <div>
+         <div className='watchlist'>
             <h1>Watchlist</h1>
          </div>
          );
