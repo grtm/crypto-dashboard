@@ -423,6 +423,10 @@ em{
   border-radius: 20px;
   background-color: #212325;
   width: 100%;
+  cursor: pointer;
+}
+#dark .ContentBox:hover{
+  background-color: #101112;
 }
 #light .ContentBox{
   height: 45px;
@@ -434,6 +438,9 @@ em{
   border-radius: 20px;
   background-color: rgb(212, 211, 211);
   width: 100%;
+}
+#light .ContentBox:hover{
+  background-color: rgb(161, 158, 158);
 }
 #dark .InfoBox2{
   width: 520px;
@@ -470,6 +477,9 @@ em{
 .heading span{
   font-weight: 300;
   color:#77ED91;
+}
+.heading span:hover{
+  color:#45b85e;
 }
 .ContentBox sub{
   font-weight: 100;
