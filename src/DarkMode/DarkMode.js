@@ -2,11 +2,12 @@ import React, { useContext } from "react";
 import { ReactComponent as Sun } from "./Sun.svg";
 import { ReactComponent as Moon } from "./Moon.svg";
 import "./DarkMode.css";
-import { useTheme } from "../hooks/useTheme"; // Import the useTheme hook
+import { ThemeContext } from "../hooks/useTheme";
 
 const DarkMode = () => {
-  const { theme, toggleTheme } = useTheme();
 
+    const {theme, toggleTheme} = useContext(ThemeContext)
+    
   return (
     <div className="dark_mode">
       <input

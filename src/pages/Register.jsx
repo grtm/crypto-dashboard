@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "../style.scss";
-import google from "../assets/google.png"
+import google from "../Assets/google.png"
 import { useState} from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { createUserWithEmailAndPassword, updateProfile, signInWithPopup } from "firebase/auth";

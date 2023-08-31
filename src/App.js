@@ -1,41 +1,61 @@
+import React,{useContext} from "react";
+import Dashboard from "./components/Dashboard";
+import Sidenav from "./components/Sidenav";
+import { Navigate, Route, Routes } from "react-router-dom";
+import "./App.css";
+import "./style.scss";
+import Portfolio from "./components/Portfolio";
+import Profile from "./components/Profile";
+import Trading from "./components/Trading";
+import Navbar from "./components/Navbar";
+import Wallet from "./components/Wallet";
+import Academy from "./components/Academy";
+import Watchlist from "./components/Watchlist";
 import Register from "./pages/Register"
 import Login from "./pages/Login"
-import {useContext} from 'react'
-import Dashboard from "./pages/Dashboard"
-import {BrowserRouter, Routes, Route,Navigate} from 'react-router-dom'
-import {AuthContext} from "./context/AuthContext"
-import { ThemeContext, useTheme } from "./hooks/useTheme";
-import './App.css';
+import DarkMode from "./DarkMode/DarkMode";
 
+import { ThemeContext, useTheme } from "./hooks/useTheme";
+import { AuthContext } from "./context/AuthContext";
 function App() {
   const {theme, toggleTheme} = useTheme()
-  localStorage.getItem( 'theme' , 'toggleTheme');
-
-  const {currentUser} = useContext(AuthContext)
-  const isAuthenticated = !!currentUser
+  const { currentUser } = useContext(AuthContext);
   const ProtectedRoute = ({children}) => {
-     if(!isAuthenticated){
-        return <Navigate to="/login"/>
-     }
-
-     return children
+    if(!currentUser){
+      return <Navigate to="/login"/>
+    } 
+    return children
   }
-
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-    <div className="App" id={theme}>
-      <BrowserRouter>
-      <Routes>
-        <Route path=""/>
-        <Route index element = {<ProtectedRoute>
-          <Dashboard />
-        </ProtectedRoute>
-        } />
-        <Route path="login" element = {<Login />} />
-        <Route path="register" element = {<Register />} />
-      </Routes>
-      </BrowserRouter>
-    </div>
+      <div className="App" id={theme}>
+        <div className="body">
+          <div className="side">
+            <Sidenav />
+          </div>
+            <div className='main'>
+          <div className="dashboard">
+          
+            <Navbar />
+            <Routes>
+              <Route path="/" element={
+               <ProtectedRoute>
+              <Dashboard />
+              </ProtectedRoute>
+              } />
+              <Route path="portfolio" element={<Portfolio />} />
+              <Route path="register" element={<Register/>}/>
+              <Route path="login" element={<Login/>}/>
+              <Route path="trading" element={<Trading />} />
+              <Route path="watchlist" element={<Watchlist />} />
+              <Route path="academy" element={<Academy />} />
+              <Route path="profile" element={<Profile />} />
+              <Route path="wallet" element={<Wallet />} />
+            </Routes>
+            </div>
+          </div>
+        </div>
+      </div>
     </ThemeContext.Provider>
   );
 }

@@ -1,21 +1,13 @@
 import React, { useContext } from "react";
-import Sidebar from "../components/Sidebar";
-import Navbar from "../components/Navbar";
-import avatar from "../assets/ninja.png";
+import avatar from "../Assets/ninja.png";
+import "../style.scss";
 import { AuthContext } from "../context/AuthContext";
-export default function Dashboard() {
+export default function Header() {
   const { currentUser } = useContext(AuthContext);
   return (
-    <div className="dashboard">
-      <div className='side'>
-      <Sidebar />
-      </div>
-      <div className="main">
-
-     
+    <div className="dashboardM">
       <div className="dashboard-container">
       <div className="container">
-      <Navbar />
         <div className="title-container">
           <span className="title">Dashboard</span>
           <span className="text">Updated on 23 may 2023</span>
@@ -95,6 +87,5 @@ export default function Dashboard() {
        </div>
        </div>
       </div>
-    </div>
   );
 }
