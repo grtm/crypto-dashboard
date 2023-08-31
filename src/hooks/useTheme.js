@@ -5,11 +5,16 @@ export const ThemeContext = React.createContext(null);
 
 export const useTheme = () => {
   const [theme, setTheme] = React.useState("dark");
- localStorage.getItem('theme');
+
+
+useEffect(()=>{
+const currentTheme = window.localStorage.getItem('My_Theme');
+ if ( currentTheme !== "dark" ) setTheme(currentTheme);
+},[])
 
 
 useEffect(() => {
-localStorage.setItem('theme', 'toggleTheme')
+  window.localStorage.setItem('My_Theme', theme)
 }, [theme]);
 
   function toggleTheme() {
