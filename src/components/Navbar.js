@@ -1,16 +1,55 @@
-import React from 'react'
-import {auth} from "../firebase"
-import { signOut } from 'firebase/auth'
-import { NavLink } from 'react-router-dom';
-import DarkMode from "../DarkMode/DarkMode";  
-export default function Sidebar() {
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import DarkMode from "../DarkMode/DarkMode";
+const Navbar = () => {
+  const [hamburger, sethamburger] = useState(false);
+  const handleShowHamburger = () => {
+    sethamburger(!hamburger);
+  };
   return (
-    <div className="sidenav">
-        <div className="logo">
-        {/* <img src={Logo} alt="img" /> */}
-        <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M17 34C26.3889 34 34 26.3888 34 17C34 7.61117 26.3889 0 17 0C7.61115 0 0 7.61117 0 17C0 26.3888 7.61115 34 17 34ZM22.3034 7.91932C22.5616 7.00235 21.6717 6.46011 20.859 7.03911L9.51416 15.1211C8.63279 15.749 8.77143 17 9.72241 17H12.7098V16.9769H18.5322L13.788 18.6508L11.6966 26.0807C11.4385 26.9977 12.3283 27.5399 13.141 26.9609L24.4859 18.8789C25.3673 18.251 25.2285 17 24.2776 17H19.7473L22.3034 7.91932Z" fill="#77ED91"/>
-</svg>
+    <div className="navbar">
+      <div className="menu">{hamburger ? (<div className="close" onClick={handleShowHamburger}><i class="fi fi-br-cross"></i></div>) : (
+            <svg
+            width="44"
+            height="44"
+            viewBox="0 0 44 44"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            onClick={handleShowHamburger}
+          >
+            <rect width="44" height="44" rx="22" fill="#151718" />
+            <path
+              d="M22.0001 19.32C23.1901 19.32 24.1601 18.35 24.1601 17.16C24.1601 15.97 23.1901 15 22.0001 15C20.8101 15 19.8401 15.97 19.8401 17.16C19.8401 18.35 20.8101 19.32 22.0001 19.32Z"
+              stroke="#E1E1E1"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M16.7899 29.0001C17.9799 29.0001 18.9499 28.0301 18.9499 26.8401C18.9499 25.6501 17.9799 24.6801 16.7899 24.6801C15.5999 24.6801 14.6299 25.6501 14.6299 26.8401C14.6299 28.0301 15.5899 29.0001 16.7899 29.0001Z"
+              stroke="#E1E1E1"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M27.21 29.0001C28.4 29.0001 29.37 28.0301 29.37 26.8401C29.37 25.6501 28.4 24.6801 27.21 24.6801C26.02 24.6801 25.05 25.6501 25.05 26.8401C25.05 28.0301 26.02 29.0001 27.21 29.0001Z"
+              stroke="#E1E1E1"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        )}
+      </div>
+      {hamburger && (
+        <>
+          <div className="hamburger">
+          <div className="sidenav">
+      <div className="logo">
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M17 34C26.3889 34 34 26.3888 34 17C34 7.61117 26.3889 0 17 0C7.61115 0 0 7.61117 0 17C0 26.3888 7.61115 34 17 34ZM22.3034 7.91932C22.5616 7.00235 21.6717 6.46011 20.859 7.03911L9.51416 15.1211C8.63279 15.749 8.77143 17 9.72241 17H12.7098V16.9769H18.5322L13.788 18.6508L11.6966 26.0807C11.4385 26.9977 12.3283 27.5399 13.141 26.9609L24.4859 18.8789C25.3673 18.251 25.2285 17 24.2776 17H19.7473L22.3034 7.91932Z" fill="#77ED91"/>
+      </svg>
         <h4>ooPsum</h4>
       </div>
       <div className="flex">
@@ -151,7 +190,7 @@ export default function Sidebar() {
             Watchlist
           </NavLink>
           <NavLink className="nav-links" to="/academy">
-          <svg
+            <svg
               width="22"
               height="23"
               viewBox="0 0 22 23"
@@ -159,25 +198,28 @@ export default function Sidebar() {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                  d="M20.1668 15.845V4.78083C20.1668 3.68083 19.2685 2.865 18.1777 2.95667H18.1227C16.1977 3.12167 13.2735 4.1025 11.6418 5.12917L11.486 5.23C11.2202 5.395 10.7802 5.395 10.5143 5.23L10.2852 5.0925C8.6535 4.075 5.7385 3.10333 3.8135 2.9475C2.72266 2.85583 1.8335 3.68083 1.8335 4.77167V15.845C1.8335 16.725 2.5485 17.55 3.4285 17.66L3.69433 17.6967C5.6835 17.9625 8.75433 18.9708 10.5143 19.9333L10.551 19.9517C10.7985 20.0892 11.1927 20.0892 11.431 19.9517C13.191 18.98 16.271 17.9625 18.2693 17.6967L18.5718 17.66C19.4518 17.55 20.1668 16.725 20.1668 15.845Z"
-                  stroke="#E1E1E1"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-              />
-                         <path d="M11 5.5325V19.2825"
+                d="M20.1668 15.845V4.78083C20.1668 3.68083 19.2685 2.865 18.1777 2.95667H18.1227C16.1977 3.12167 13.2735 4.1025 11.6418 5.12917L11.486 5.23C11.2202 5.395 10.7802 5.395 10.5143 5.23L10.2852 5.0925C8.6535 4.075 5.7385 3.10333 3.8135 2.9475C2.72266 2.85583 1.8335 3.68083 1.8335 4.77167V15.845C1.8335 16.725 2.5485 17.55 3.4285 17.66L3.69433 17.6967C5.6835 17.9625 8.75433 18.9708 10.5143 19.9333L10.551 19.9517C10.7985 20.0892 11.1927 20.0892 11.431 19.9517C13.191 18.98 16.271 17.9625 18.2693 17.6967L18.5718 17.66C19.4518 17.55 20.1668 16.725 20.1668 15.845Z"
                 stroke="#E1E1E1"
                 stroke-width="1.5"
                 stroke-linecap="round"
                 stroke-linejoin="round"
               />
-              <path d="M7.104 8.2825H5.0415"
+              <path
+                d="M11 5.5325V19.2825"
                 stroke="#E1E1E1"
                 stroke-width="1.5"
                 stroke-linecap="round"
                 stroke-linejoin="round"
               />
-              <path d="M7.7915 11.0325H5.0415"
+              <path
+                d="M7.104 8.2825H5.0415"
+                stroke="#E1E1E1"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M7.7915 11.0325H5.0415"
                 stroke="#E1E1E1"
                 stroke-width="1.5"
                 stroke-linecap="round"
@@ -280,12 +322,18 @@ export default function Sidebar() {
                 stroke-linejoin="round"
               />
             </svg>
-            <button onClick={()=> signOut(auth)}>Logout</button>
+            Logout
           </div>
-          <div className="mode"><DarkMode/>
+          <div className="mode">
+          <DarkMode />
           </div>
         </div>
       </div>
     </div>
+          </div>
+        </>
+      )}
+    </div>
   );
 };
+export default Navbar;

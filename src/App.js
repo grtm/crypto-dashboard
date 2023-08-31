@@ -4,12 +4,17 @@ import {useContext} from 'react'
 import Dashboard from "./pages/Dashboard"
 import {BrowserRouter, Routes, Route,Navigate} from 'react-router-dom'
 import {AuthContext} from "./context/AuthContext"
+import { ThemeContext, useTheme } from "./hooks/useTheme";
 import './App.css';
 
 function App() {
+  const {theme, toggleTheme} = useTheme()
+  localStorage.getItem( 'theme' , 'toggleTheme');
+
   const {currentUser} = useContext(AuthContext)
+  const isAuthenticated = !!currentUser
   const ProtectedRoute = ({children}) => {
-     if(!currentUser){
+     if(!isAuthenticated){
         return <Navigate to="/login"/>
      }
 
@@ -17,7 +22,8 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <div className="App" id={theme}>
       <BrowserRouter>
       <Routes>
         <Route path=""/>
@@ -30,6 +36,7 @@ function App() {
       </Routes>
       </BrowserRouter>
     </div>
+    </ThemeContext.Provider>
   );
 }
 
