@@ -35,9 +35,13 @@ function App() {
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       <div className="App" id={theme}>
         <div className="body">
-          <div className="side">
-            {shouldRenderSidenav && <Sidenav />}
-          </div>
+          
+          {shouldRenderSidenav && <>
+            <div className="side">
+              {/* {shouldRenderSidenav && <Sidenav />} */}
+              <Sidenav />
+            </div>
+          </>}
             <div className='main'>
           <div className="dashboard">
           
