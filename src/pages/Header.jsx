@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import avatar from "../Assets/ninja.png";
 import "../style.scss";
 import { AuthContext } from "../context/AuthContext";
 export default function Header() {
@@ -79,7 +78,7 @@ export default function Header() {
             />
           </svg>
 
-          <img src={avatar} className="avatar"></img>
+          <img src="https://ionicframework.com/docs/img/demos/avatar.svg" className="avatar"></img>
           <div className="user-name">
             <span>{currentUser.displayName}</span>
           </div>

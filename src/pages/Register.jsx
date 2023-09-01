@@ -74,7 +74,7 @@ export default function Register() {
             <input type="password" placeholder="Password" />
             <button className="signinbtn">Sign up</button>
             <button onClick={handleGoogle} className="googlebtn">
-              <img src={google} alt="" className="google"/>
+              <img src="https://blog.hubspot.com/hubfs/image8-2.jpg" alt="" className="google"/>
               Sign in with Google
               </button>
             {err && (
