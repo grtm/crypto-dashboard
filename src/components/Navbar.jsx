@@ -1,21 +1,16 @@
 import React, { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Logo from "../Assets/Vector.png";
 import DarkMode from "../DarkMode/DarkMode";
 
 const Navbar = () => {
   const [hamburger, sethamburger] = useState(false);
-  const currentPath = window.location.pathname;
-
-  const shouldRenderSidenav = currentPath !== '/login' && currentPath !== '/register';;
-
 
   const handleShowHamburger = () => {
     sethamburger(!hamburger);
   };
   return (
     <div className="navbar">
-      
       <div className="menu">
         {hamburger ? (<div className="close" onClick={handleShowHamburger}><i class="fi fi-br-cross"></i></div>) : (
             <svg
