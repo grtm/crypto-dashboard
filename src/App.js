@@ -37,7 +37,11 @@ function App() {
       <div className="App" id={theme}>
         <div className="body">
           
-
+          {shouldRenderSidenav && <>
+            <div className="side">
+              {shouldRenderSidenav && <Sidenav />}
+            </div>
+          </>}
             {shouldRenderSidenavHome && <>
             <div className="side">
               {shouldRenderSidenavHome && <Sidenav />}
