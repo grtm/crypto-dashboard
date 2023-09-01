@@ -15,43 +15,7 @@ const Navbar = () => {
   };
   return (
     <div className="navbar">
-      {shouldRenderSidenav && <>
-        <div className="menu">
-        {hamburger ? (<div className="close" onClick={handleShowHamburger}><i class="fi fi-br-cross"></i></div>) : (
-            <svg
-            width="44"
-            height="44"
-            viewBox="0 0 44 44"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            onClick={handleShowHamburger}
-          >
-            <rect width="44" height="44" rx="22" fill="#151718" />
-            <path
-              d="M22.0001 19.32C23.1901 19.32 24.1601 18.35 24.1601 17.16C24.1601 15.97 23.1901 15 22.0001 15C20.8101 15 19.8401 15.97 19.8401 17.16C19.8401 18.35 20.8101 19.32 22.0001 19.32Z"
-              stroke="#E1E1E1"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M16.7899 29.0001C17.9799 29.0001 18.9499 28.0301 18.9499 26.8401C18.9499 25.6501 17.9799 24.6801 16.7899 24.6801C15.5999 24.6801 14.6299 25.6501 14.6299 26.8401C14.6299 28.0301 15.5899 29.0001 16.7899 29.0001Z"
-              stroke="#E1E1E1"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M27.21 29.0001C28.4 29.0001 29.37 28.0301 29.37 26.8401C29.37 25.6501 28.4 24.6801 27.21 24.6801C26.02 24.6801 25.05 25.6501 25.05 26.8401C25.05 28.0301 26.02 29.0001 27.21 29.0001Z"
-              stroke="#E1E1E1"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        )}
-      </div>
-      </>}
+      
       <div className="menu">
         {hamburger ? (<div className="close" onClick={handleShowHamburger}><i class="fi fi-br-cross"></i></div>) : (
             <svg
