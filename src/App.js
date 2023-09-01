@@ -1,7 +1,7 @@
 import React,{useContext} from "react";
 import Dashboard from "./components/Dashboard";
 import Sidenav from "./components/Sidenav";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import "./App.css";
 import "./style.scss";
 import Portfolio from "./components/Portfolio";
@@ -18,8 +18,13 @@ import DarkMode from "./DarkMode/DarkMode";
 import { ThemeContext, useTheme } from "./hooks/useTheme";
 import { AuthContext } from "./context/AuthContext";
 function App() {
-  const {theme, toggleTheme} = useTheme()
+  const {theme, toggleTheme} = useTheme();
   const { currentUser } = useContext(AuthContext);
+
+  const currentPath = window.location.pathname;
+
+  const shouldRenderSidenav = currentPath !== '/login';
+
   const ProtectedRoute = ({children}) => {
     if(!currentUser){
       return <Navigate to="/login"/>
@@ -31,7 +36,7 @@ function App() {
       <div className="App" id={theme}>
         <div className="body">
           <div className="side">
-            <Sidenav />
+            {shouldRenderSidenav && <Sidenav />}
           </div>
             <div className='main'>
           <div className="dashboard">
