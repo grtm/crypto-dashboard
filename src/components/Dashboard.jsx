@@ -3,7 +3,6 @@ import time from "../assets/⌛.png";
 import "../style.scss";
 import Header from "../pages/Header";
 import Navbar from "../components/Navbar";
-import Sidenav from "../components/Sidenav";
 import MiddleInfo from "../pages/MiddleInfo"
 const Dashboard = () => {
   return (
