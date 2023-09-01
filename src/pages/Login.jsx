@@ -6,6 +6,8 @@ import { auth } from "../firebase";
 export default function Login() {
   const [err, setErr] = useState(false);
   const navigate = useNavigate();
+  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const email = e.target[0].value;
@@ -18,6 +20,7 @@ export default function Login() {
       setErr(true);
     }
   };
+
   return (
     <div className="form-container">
       <div className="form-wrapper">
