@@ -1,15 +1,57 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import Logo from "../Assets/Vector.png";
-import DarkMode from "../DarkMode/DarkMode";  
+import DarkMode from "../DarkMode/DarkMode";
 import { signOut } from "firebase/auth";
 import {auth} from "../firebase"
-const Sidenav = () => {
-  
+const Navbar = () => {
+  const [hamburger, sethamburger] = useState(false);
+  const handleShowHamburger = () => {
+    sethamburger(!hamburger);
+  };
   return (
-    <div className="sidenav">
+    <div className="navbar">
+      <div className="menu">{hamburger ? (<div className="close" onClick={handleShowHamburger}><i class="fi fi-br-cross"></i></div>) : (
+            <svg
+            width="44"
+            height="44"
+            viewBox="0 0 44 44"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            onClick={handleShowHamburger}
+          >
+            <rect width="44" height="44" rx="22" fill="#151718" />
+            <path
+              d="M22.0001 19.32C23.1901 19.32 24.1601 18.35 24.1601 17.16C24.1601 15.97 23.1901 15 22.0001 15C20.8101 15 19.8401 15.97 19.8401 17.16C19.8401 18.35 20.8101 19.32 22.0001 19.32Z"
+              stroke="#E1E1E1"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M16.7899 29.0001C17.9799 29.0001 18.9499 28.0301 18.9499 26.8401C18.9499 25.6501 17.9799 24.6801 16.7899 24.6801C15.5999 24.6801 14.6299 25.6501 14.6299 26.8401C14.6299 28.0301 15.5899 29.0001 16.7899 29.0001Z"
+              stroke="#E1E1E1"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M27.21 29.0001C28.4 29.0001 29.37 28.0301 29.37 26.8401C29.37 25.6501 28.4 24.6801 27.21 24.6801C26.02 24.6801 25.05 25.6501 25.05 26.8401C25.05 28.0301 26.02 29.0001 27.21 29.0001Z"
+              stroke="#E1E1E1"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        )}
+      </div>
+      {hamburger && (
+        <>
+          <div className="hamburger">
+          <div className="sidenav">
       <div className="logo">
-        <img src={Logo} alt="img" />
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M17 34C26.3889 34 34 26.3888 34 17C34 7.61117 26.3889 0 17 0C7.61115 0 0 7.61117 0 17C0 26.3888 7.61115 34 17 34ZM22.3034 7.91932C22.5616 7.00235 21.6717 6.46011 20.859 7.03911L9.51416 15.1211C8.63279 15.749 8.77143 17 9.72241 17H12.7098V16.9769H18.5322L13.788 18.6508L11.6966 26.0807C11.4385 26.9977 12.3283 27.5399 13.141 26.9609L24.4859 18.8789C25.3673 18.251 25.2285 17 24.2776 17H19.7473L22.3034 7.91932Z" fill="#77ED91"/>
+      </svg>
         <h4>ooPsum</h4>
       </div>
       <div className="flex">
@@ -248,7 +290,6 @@ const Sidenav = () => {
             Wallet
           </NavLink>
         </div>
-
         <div className="sidenav-foot">
           <div className="logout">
             <svg
@@ -286,12 +327,15 @@ const Sidenav = () => {
             <button onClick={()=>signOut(auth)} className="logout">Logout</button>
           </div>
           <div className="mode">
-          <DarkMode/>
+          <DarkMode />
           </div>
         </div>
       </div>
     </div>
+          </div>
+        </>
+      )}
+    </div>
   );
 };
-
-export default Sidenav;
+export default Navbar;

@@ -1,14 +1,13 @@
-import React from "react";
 import fire from "../Assets/🔥.png";
 import time from "../Assets/⌛.png";
-
+import "../style.scss";
+import Header from "../pages/Header";
+import MiddleInfo from "../pages/MiddleInfo"
 const Dashboard = () => {
   return (
     <div className="dashboard">
-      <h1>Dashboard</h1>
+      <Header/>
       <div className="mainWrapper">
-        <em>Today's prices by marketcap</em>
-
         <div className="wrapper">
           <div className="InfoBox1">
             <div className="heading">
@@ -259,6 +258,7 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
+        <MiddleInfo />
       </div>
     </div>
   );
