@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import Logo from "../Assets/Vector.png";
+import Logo from "../assets/Vector.png";
 import DarkMode from "../DarkMode/DarkMode";
 
 const Navbar = () => {

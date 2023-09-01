@@ -1,7 +1,7 @@
 import "../App.css";
-import greencard from "../Assets/greencard.png"
-import blackcat from "../Assets/blackcat.png"
-import thetafuel from "../Assets/thetafuel.png"
+import greencard from "../assets/greencard.png"
+import blackcat from "../assets/blackcat.png"
+import thetafuel from "../assets/thetafuel.png"
 function MiddleInfo() {
   return (
     <div class="secondSection">

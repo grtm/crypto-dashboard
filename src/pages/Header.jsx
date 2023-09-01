@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import avatar from "../Assets/ninja.png";
+import avatar from "../assets/ninja.png";
 import "../style.scss";
 import { AuthContext } from "../context/AuthContext";
 export default function Header({ title = 'Dashboard' }) {

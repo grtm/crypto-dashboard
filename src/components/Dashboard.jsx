@@ -1,5 +1,5 @@
-import fire from "../Assets/🔥.png";
-import time from "../Assets/⌛.png";
+import fire from "../assets/🔥.png";
+import time from "../assets/⌛.png";
 import "../style.scss";
 import Header from "../pages/Header";
 import Navbar from "../components/Navbar";
