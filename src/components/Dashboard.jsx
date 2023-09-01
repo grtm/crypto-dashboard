@@ -2,10 +2,13 @@ import fire from "../Assets/🔥.png";
 import time from "../Assets/⌛.png";
 import "../style.scss";
 import Header from "../pages/Header";
+import Navbar from "../components/Navbar";
+import Sidenav from "../components/Sidenav";
 import MiddleInfo from "../pages/MiddleInfo"
 const Dashboard = () => {
   return (
     <div className="dashboard">
+      <Navbar />
       <Header/>
       <div className="mainWrapper">
         <div className="wrapper">

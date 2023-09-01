@@ -1,11 +1,13 @@
 import React from 'react';
-
+import Navbar from "../components/Navbar";
+import Header from "../pages/Header";
 const Trading = () => {
-    return (
-    <div className='trading'>
-        <h1>Trading</h1>
-    </div>
-    );
+    return(
+         <div className='Trading'>
+            <Navbar />
+            <Header title='Trading' />
+         </div>
+         );
 }
 
 

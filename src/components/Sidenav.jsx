@@ -7,7 +7,7 @@ import {auth} from "../firebase"
 const Sidenav = () => {
   
   return (
-    <div className="sidenav">
+    <div className="sidenav" style={{ position: 'fixed', maxWidth: 250 }}>
       <div className="logo">
         <img src={Logo} alt="img" />
         <h4>ooPsum</h4>

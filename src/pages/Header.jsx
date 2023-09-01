@@ -2,15 +2,16 @@ import React, { useContext } from "react";
 import avatar from "../Assets/ninja.png";
 import "../style.scss";
 import { AuthContext } from "../context/AuthContext";
-export default function Header() {
+export default function Header({ title = 'Dashboard' }) {
   const { currentUser } = useContext(AuthContext);
+  const date = new Date().toISOString;
   return (
     <div className="dashboardM">
       <div className="dashboard-container">
       <div className="container">
         <div className="title-container">
-          <span className="title">Dashboard</span>
-          <span className="text">Updated on 23 may 2023</span>
+          <span className="title">{title}</span>
+          <span className="text">Last viewed: {date}</span>
         </div>
         <div className="search">
           <svg

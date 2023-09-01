@@ -1,9 +1,12 @@
 import React from 'react';
-
+import Navbar from "../components/Navbar";
+import Sidenav from "../components/Sidenav";
+import Header from '../pages/Header';
 const Wallet = () => {
     return (
     <div className='wallet'>
-        <h1>Wallet</h1>
+        <Navbar />
+        <Header title='Wallet' />
     </div>
     );
 }

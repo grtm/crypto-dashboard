@@ -7,7 +7,6 @@ import "./style.scss";
 import Portfolio from "./components/Portfolio";
 import Profile from "./components/Profile";
 import Trading from "./components/Trading";
-import Navbar from "./components/Navbar";
 import Wallet from "./components/Wallet";
 import Academy from "./components/Academy";
 import Watchlist from "./components/Watchlist";
@@ -26,21 +25,21 @@ function App() {
     } 
     return children
   }
+  const url = window.location.href.toString();
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       <div className="App" id={theme}>
         <div className="body">
           <div className="side">
-            <Sidenav />
+            { url.indexOf('login') === -1 && url.indexOf('register') === -1 ? <Sidenav /> : null }
           </div>
             <div className='main'>
           <div className="dashboard">
           
-            <Navbar />
             <Routes>
               <Route path="/" element={
                <ProtectedRoute>
-              <Dashboard />
+                  <Dashboard />
               </ProtectedRoute>
               } />
               <Route path="portfolio" element={<Portfolio />} />

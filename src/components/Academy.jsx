@@ -1,11 +1,14 @@
 import React from 'react';
-
+import Navbar from "../components/Navbar";
+import Sidenav from "../components/Sidenav";
+import Header from "../pages/Header";
 const Academy = () => {
-    return (
-    <div className='academy'>
-        <h1>Academy</h1>
-    </div>
-    );
+    return(
+         <div className='Academy'>
+            <Navbar />
+            <Header title='Academy' />
+         </div>
+         );
 }
 
 

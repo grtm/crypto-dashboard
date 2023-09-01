@@ -113,7 +113,7 @@ export default function Sidebar() {
                 stroke-width="1.5"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-              />
+              />  
               <path
                 d="M16.8757 20.1667H19.2499C19.7541 20.1667 20.1666 19.7542 20.1666 19.25V16.8758C20.1666 16.06 19.1766 15.6475 18.5991 16.225L16.2249 18.5992C15.6566 19.1767 16.0599 20.1667 16.8757 20.1667Z"
                 stroke="#E1E1E1"
