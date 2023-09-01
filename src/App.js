@@ -23,7 +23,7 @@ function App() {
 
   const currentPath = window.location.pathname;
 
-  const shouldRenderSidenav = currentPath !== '/login' && '/register';
+  const shouldRenderSidenav = currentPath !== '/login' && currentPath !== '/register';;
 
   const ProtectedRoute = ({children}) => {
     if(!currentUser){
