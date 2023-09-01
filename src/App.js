@@ -23,7 +23,7 @@ function App() {
 
   const currentPath = window.location.pathname;
 
-  const shouldRenderSidenav = currentPath !== '/login';
+  const shouldRenderSidenav = currentPath !== '/login' && '/register';
 
   const ProtectedRoute = ({children}) => {
     if(!currentUser){
@@ -38,8 +38,7 @@ function App() {
           
           {shouldRenderSidenav && <>
             <div className="side">
-              {/* {shouldRenderSidenav && <Sidenav />} */}
-              <Sidenav />
+              {shouldRenderSidenav && <Sidenav />}
             </div>
           </>}
             <div className='main'>
