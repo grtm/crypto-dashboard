@@ -38,8 +38,7 @@ function App() {
           
           {shouldRenderSidenav && <>
             <div className="side">
-              {/* {shouldRenderSidenav && <Sidenav />} */}
-              <Sidenav />
+              {shouldRenderSidenav && <Sidenav />}
             </div>
           </>}
             <div className='main'>
